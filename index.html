@@ -2,16 +2,32 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Hello, World! - A-Frame</title>
-    <meta name="description" content="Hello, World! - A-Frame">
+    <title>A-Frame Key Board</title>
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
     <script src="https://aframe.io/releases/0.3.0/aframe.min.js"></script>
+    <script src="/src/aframe-text-component.min.js"></script>
+    <script src="/src/Pixeled_Regular.typeface.js"></script>
+    <script src="/src/aframe-keyboard.js"></script>
   </head>
   <body>
     <a-scene>
-      <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
-      <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
-      <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
-      <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
+      <a-assets>
+        <a-mixin id="font" text="font: Pixeled"></a-mixin>
+      </a-assets>
+      <a-entity position="0 2 0" data-aframe-default-camera="" camera="" wasd-controls="" rotation="" look-controls="" aframe-injected="" scale="" visible="">
+        <a-entity cursor="fuse: true; maxDistance: 30; timeout: 500"
+          position="0 0 -2"
+          geometry="primitive: ring"
+          material="color: black; shader: flat"
+          scale=".025 .025 .025">
+        </a-entity>
+      </a-entity>
+
+      <a-entity id="keyboard-container" position="0 2 1" scale=".5 .5 .5">
+        <a-entity id="charPreview" mixin="font" text="text: H" position="0 2 -11" scale="2 2 2"></a-entity>
+      </a-entity>
+
+      <a-plane position="0 0 0" rotation="-90 0 0" width="8" height="8" color="#7BC8A4"></a-plane>
       <a-sky color="#ECECEC"></a-sky>
     </a-scene>
   </body>
