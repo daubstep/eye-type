@@ -4,27 +4,28 @@
     <meta charset="utf-8">
     <title>A-Frame Key Board</title>
     <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
     <script src="https://aframe.io/releases/0.3.0/aframe.min.js"></script>
     <script src="/src/aframe-text-component.min.js"></script>
-    <script src="/src/Pixeled_Regular.typeface.js"></script>
+    <script src="/src/SquareFont_Regular.typeface.js"></script>
     <script src="/src/aframe-keyboard.js"></script>
   </head>
   <body>
     <a-scene>
       <a-assets>
-        <a-mixin id="font" text="font: Pixeled"></a-mixin>
+        <a-mixin id="font" text="font: SquareFont"></a-mixin>
       </a-assets>
-      <a-entity position="0 2 0" data-aframe-default-camera="" camera="" wasd-controls="" rotation="" look-controls="" aframe-injected="" scale="" visible="">
+      <a-entity position="0 2 0" data-aframe-default-camera="" camera="true" rotation="" look-controls="true" aframe-injected="" scale="" visible="">
         <a-entity cursor="fuse: true; maxDistance: 30; timeout: 500"
-          position="0 0 -2"
+          position="0 0 -1"
           geometry="primitive: ring"
           material="color: black; shader: flat"
-          scale=".025 .025 .025">
+          scale=".01 .01 .01">
         </a-entity>
       </a-entity>
 
-      <a-entity id="keyboard-container" position="0 2 1" scale=".5 .5 .5">
-        <a-entity id="charPreview" mixin="font" text="text: H" position="0 2 -11" scale="2 2 2"></a-entity>
+      <a-entity id="keyboard-container" position="0 2 1" scale=".25 .25 .25">
+        <a-entity id="charPreview" mixin="font" text="text: " position="0 2 -11" scale="2 2 2"></a-entity>
       </a-entity>
 
       <a-plane position="0 0 0" rotation="-90 0 0" width="8" height="8" color="#7BC8A4"></a-plane>
